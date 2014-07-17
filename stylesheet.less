@@ -347,10 +347,16 @@ span h4 {
 
 .widget .extendednavigation ul li.folder:after {
 	border-top-color: @color-swatch3;
+	right: 2px;
+	top: 48%;
 }
 
 .widget .extendednavigation ul li:hover ul {
 	background-color:darken(@color-swatch7,5%);
+}
+
+.widget.ecomcheckout a:hover {
+	text-decoration: none;
 }
 
 /* 
@@ -444,7 +450,7 @@ button.btn,
 
 .widget.profile .bk-profile-socialicons span a,
 .widget.socialicons span a {
-	border-radius: 0;
+	border-radius: 3px;
 	background-color: @color-swatch3;
 }
 
@@ -459,6 +465,12 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
 
 .widget.socialicons {
 	clear:both;
+	min-height:30px;
+}
+
+.widget.image span img {
+	width:100%;
+
 }
 
 hr.line {
@@ -485,7 +497,7 @@ button.btn,
 }
 
 .widget.profile form button {
-	padding:7px 14px;
+	padding: 7px 14px 10px;
 }
 
 .widget.tweet a:hover {
@@ -521,6 +533,11 @@ button.btn,
 }
 .twitter ul li time {
 	font-size: inherit;
+}
+
+.widget.twitter .twitter-profile-pic {
+	min-height:150px;
+	border-radius: 3px;
 }
 
 /*
@@ -824,6 +841,10 @@ footer.bk-footer {
 	border-top:1px solid @color-swatch1;
 }
 
+footer.bk-footer .widget .extendednavigation ul {
+	display:block;
+}
+
 .right {
 	float:right;
 	text-align:right;
@@ -893,21 +914,20 @@ header.bk-header .header-left .widget.profile span {
 }
 
  .widget.profile span {
-    font-family:@font-swatch9-font-family;
-    font-weight: @font-swatch9-font-weight;
-    line-height:@font-swatch9-line-height;
-    letter-spacing: @font-swatch9-letter-spacing;
-    font-size: @font-swatch9-font-size;    
-}
-
-.widget.profile span {
-	margin:0px auto;
-	display:table;
+    font-family:@font-swatch4-font-family;
+    font-weight: @font-swatch4-font-weight;
+    line-height:@font-swatch4-line-height;
+    letter-spacing: @font-swatch4-letter-spacing;
+    font-size: @font-swatch4-font-size;    
 }
 
 .bk-profile-email, .widget.profile form, .widget.profile span, .widget.profile .bk-profile-socialicons, .widget.profile ul.twitter {
 	margin: 0px auto;
 	display: table;
+}
+
+.bk-profile-address p {
+	line-height:@font-swatch4-line-height;
 }
 
 /*	===============================
@@ -1551,6 +1571,62 @@ input, textarea {
 	background-color:darken(@color-swatch7,5%);
 }
 
+.widget.ecomproduct {
+    clear: both;
+    .ecom-product {
+        .ecom-product-images-container {
+            width: 55%;
+            float: left;
+            margin-bottom: 1em;
+            @media @tablet {
+                width:100%;
+            }
+        }
+        .ecom-product-preview-image-wrap {
+            height: 410px;
+            margin-top: 8px;
+            margin-bottom: 1em;
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            overflow: hidden;
+            -webkit-box-shadow: 2px 2px 0 1px #D9D9D9;
+            box-shadow: 2px 2px 0 1px #D9D9D9;
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+.widget.ecomproduct .ecom-product .btn {
+	border-radius:3px;
+}
+
+.widget.ecomproduct .ecom-product .btn:hover {
+	background-color: lighten(@color-swatch3,5%);
+}
+
+.widget.ecomproduct .ecom-product a:hover {
+	text-decoration: none;
+}
+
+input[type=search], input[type=text], input[type=email], .signupform fieldset input {
+	height:40%;
+}
+
+.widget.ecombasket .ecombasket-pull {
+	background-color:@color-swatch3;
+	border-radius:3px;
+	&:hover {
+		background-color: lighten(@color-swatch3,5%);
+		border: none;
+	}
+}
+
 /*	===============================
 	Media queries
 	=============================== */
@@ -1743,6 +1819,27 @@ input, textarea {
 	.widget.gallery ul li:last-child {
 		margin-right:0;
 	}
+	footer.bk-footer .widget .extendednavigation ul li {
+		width: 20%;
+		padding:0;
+	}
+	footer.bk-footer .widget .extendednavigation a.pull {
+		display:none;
+	}
+	footer.bk-footer .widget.profile, footer.bk-footer .widget .extendednavigation ul {
+		width:100%;
+		margin:0px auto;
+		display:table;
+	}
+	.right {
+		float:none;
+	}
+	.widget.profile span, .widget.profile p, .widget.profile {
+		float:inherit;
+	}
+	footer.bk-footer .widget .extendednavigation {
+		margin-bottom:20px;
+	}
 }
 
 @media only screen and (max-width: 568px) {
@@ -1818,5 +1915,7 @@ input, textarea {
 	.widget.gallery ul {
 		margin-bottom:0;
 	}
-
+	.responsivecolumns .columns-two-left, .columns-two-50-50 .columns-two-left {
+		margin-bottom:2%;
+	}
 }
