@@ -1,0 +1,60 @@
+
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="page-wrap">
+    <header class="bk-header">
+    	<div class="wrapper clearfix">
+    		<div class="companyheader">
+    		    {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+    		    {{widget('companyname', 'companyname', {"business": "SURF & LOVE"})|raw}}
+    		</div>
+    		{{widget('extendednavigation', 'navigationheader', {"align":"left"})|raw}}
+    	</div>
+    </header>
+    
+    <section class="feature-section">
+        {{widget('image', 'image', { 'src': asset('images/feature-img.jpg'), 'title': '', 'description': '',    'alt': '', 'fileName': 'feature-img.jpg', 'fileSize': '58kb', 'imageSize': '940 x 648', 'imageWidth':  '100%'})|raw}}
+    </section>
+    
+    <section class="bk-section">
+        {{widget('gallery', 'gallery1', 
+        {'albumRef':0,
+        'showDescription': true,
+        'showTitle': true,
+        'images':
+        [
+        {'imageHeight':'246', 'imageWidth':'246', 'url':asset('/images/gallery/1.jpg'), 'title':'Image  1',  'description': 'This is image 1'},
+        {'imageHeight':'246', 'imageWidth':'246', 'url':asset('/images/gallery/2.jpg'), 'title':'Image  2',  'description': 'This is image 2'},
+        {'imageHeight':'246', 'imageWidth':'246', 'url':asset('/images/gallery/3.jpg'), 'title':'Image  3',  'description': 'This is image 3'}, 
+        ]
+        })|raw}}
+    </section>
+    
+    <div class="canvas">
+    	<section class="section main home-page">
+    		{{zone('main')|raw}}
+    	</section>
+    </div>
+    
+    <footer class="bk-footer">
+        <div class="wrapper clearfix">
+            <div class="responsivecolumns columns-two-50-50">
+                <div class="column columns-two-left">
+                	<div class="left">
+                    {{widget('extendednavigation', 'navigationheader', {"align":"left"})|raw}}
+                    </div>
+                </div>
+                <div class="column columns-two-right">
+                <div class="right">
+                    {{widget('profile', 'footercolumn1profilesocialicons', { 'profileType':'socialicons',   'socialicons':'profile'})|raw}}
+                    {{widget('profile', 'footercolumn1profilecopyright', { 'profileType':'copyright',   'copyright':'profile'})|raw}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+{% endblock %}
