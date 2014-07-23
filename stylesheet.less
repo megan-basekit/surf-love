@@ -43,9 +43,6 @@
 /*	===============================
 	Type
 	=============================== */
-a {
-	color:@font-swatch4-color;
-}
 
 h6, .nav a, .nav .text, .main .menu-item-price p {
 	font-family:@font-swatch6-font-family; 
@@ -509,6 +506,7 @@ button.btn,
 	border: 2px solid @color-swatch3;
 	display: inline-block;
 	margin-bottom: 1em;
+	border-radius:3px;
 	&:hover {
 		border-color: lighten(@color-swatch3, 5%);
 	}
@@ -552,29 +550,10 @@ button.btn,
    FEATURE = gallery widget
    =============================== */
 
-.widget.gallery {
-    margin-left:0;
-}
 
 .widget.gallery ul {
 	margin-bottom:20px;
-}
-
-.widget.gallery ul li {
-	width: 32%;
-	padding-bottom:50%;
-	margin-right:2%;
-}
-
-.widget.gallery ul li:last-child {
-	margin-right:0;
-}
-
-.widget.gallery ul li span.inner {
-    left:0;
-    right: 5px;
-    width:100%;
-    overflow:inherit;
+	width:101%;
 }
 
 .widget.gallery ul li span.inner .title {
@@ -593,15 +572,11 @@ button.btn,
 	bottom: 5px;
 	color:@font-swatch5-color;
 	text-align:left;
+	height:100px;
 }
 
-.widget.gallery ul li span.inner a {
-	&:hover {
-		border: none;
-	}
-}
-.widget.gallery {
-	margin: 0;
+.widget.gallery ul li {
+	padding-bottom:50%;
 }
 
 /*
@@ -925,6 +900,10 @@ header.bk-header .header-left .widget.profile span {
     font-size: @font-swatch4-font-size;    
 }
 
+.widget.profile span, .widget.profile a, .widget.profile p {
+	float:right;
+}
+
 .bk-profile-email, .widget.profile form, .widget.profile span, .widget.profile .bk-profile-socialicons, .widget.profile ul.twitter {
 	margin: 0px auto;
 	display: table;
@@ -1102,6 +1081,10 @@ h1, h2, h3, h4, h5, h6 {
 	padding-right:40px;
 }
 
+.blog-post-title a, .blog-post-more-link a {
+	color:@font-swatch4-color;
+}
+
 .blog-post-body {
 	padding: 0px 40px;
 }
@@ -1197,7 +1180,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // 7. Blog Post
 .main .blog-post-metadata {
-	border-top: 1px solid darken(@color-swatch1, 10%);
+	border-top:5px solid @color-swatch3;
 	padding: 30px 40px;
 	margin-top: 20px;
 }
@@ -1271,7 +1254,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom:20px;
 }
 .blog-post-list .blog-post-item {
-	background-color:darken(@color-swatch7,5%);
+	background-color:darken(@color-swatch7,3%);
 	border-radius:5px;
 	padding-bottom:60px;
 }
@@ -1815,16 +1798,6 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
     	right: 5px;
     	left: inherit;
 	}
-	.widget.gallery ul li span.inner .title {
-		margin-bottom: -6px;
-	}
-	.widget.gallery ul li {
-		width: 31%;
-		margin-right: 3.5%;
-	}
-	.widget.gallery ul li:last-child {
-		margin-right:0;
-	}
 	footer.bk-footer .widget .extendednavigation ul li {
 		width: 20%;
 		padding:0;
@@ -1917,14 +1890,23 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 		top: 10px;
 	}
 	.widget.gallery ul li {
-		width: 31%;
-		margin-right: 3.4%;
-		padding-bottom:60%;
+		width: 100%;
+		height:400px;
 	}
 	.widget.gallery ul {
 		margin-bottom:0;
 	}
 	.responsivecolumns .columns-two-left, .columns-two-50-50 .columns-two-left {
 		margin-bottom:2%;
+	}
+	.widget.companyname a {
+		font-size: bkscale(@font-swatch10-font-size, 0.7);
+		line-height: bkscale(@font-swatch10-line-height, 0.7);
+	}
+	footer.bk-footer .widget .extendednavigation ul li {
+		width:50%!important;
+	}
+	footer.bk-footer {
+		padding: 30px 0px 40px;
 	}
 }

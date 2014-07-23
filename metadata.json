@@ -26,7 +26,7 @@
             "color1":"#f3f0eb",
             "color2":"#aaaaaa",
             "color3":"#aaaaaa",
-            "color4":"#aaaaaa",
+            "color4":"#000000",
             "color5":"#aaaaaa",
             "color6":"#aaaaaa",
             "color7":"#ffffff"
@@ -53,7 +53,7 @@
             "color1":"#ffffff",
             "color2":"#aaaaaa",
             "color3":"#D50761",
-            "color4":"#D50761",
+            "color4":"#444444",
             "color5":"#aaaaaa",
             "color6":"#D50761",
             "color7":"#FDF2F7"
