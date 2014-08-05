@@ -58,6 +58,10 @@ h6, .nav a, .nav .text, .main .menu-item-price p {
 	font-weight: @font-swatch5-font-weight; 
 }
 
+a {
+	color:@font-swatch6-color-hover; 
+}
+
 button,
 .btn,
 a.btn,
@@ -93,6 +97,11 @@ input[type=submit],
 		letter-spacing: @font-swatch9-letter-spacing; 
 		font-size: @font-swatch9-font-size;
 	}
+	.content {
+	.spare {
+		padding:40px;
+		}
+	}
 }
 
 // Logo
@@ -122,6 +131,13 @@ span h4 {
 	font-size: @font-swatch9-font-size;
 }
 
+.widget {
+    &.logo, &.companyname {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
 /* ===============================
    EXTENDED NAVIGATION
    =============================== */
@@ -131,6 +147,12 @@ span h4 {
     @media @tablet {
     	float: none;
     	max-width: 100%;
+    }
+}
+
+.extendednavigation li.selected {
+    a, .text {
+        color: @font-swatch6-color-hover;
     }
 }
 
@@ -299,8 +321,8 @@ span h4 {
 }
 
 .widget .extendednavigation ul li a:hover {
-	text-decoration: underline;
-	color:@font-swatch6-color;
+	text-decoration: none;
+	color:@font-swatch6-color-hover;
 }
 
 .widget .extendednavigation ul li.folder .text {
@@ -308,7 +330,7 @@ span h4 {
 }
 
 .widget .extendednavigation ul li.folder .text:hover {
-    color:@font-swatch6-color;
+    color:@font-swatch6-color-hover;
 }
 
 .bk-pt-default .widget.extendednavigation {
@@ -343,7 +365,7 @@ span h4 {
 }
 
 .widget .extendednavigation ul li.folder:after {
-	border-top-color: @color-swatch3;
+  	border-top-color:@font-swatch6-color;
 	right: 2px;
 	top: 48%;
 }
@@ -426,7 +448,7 @@ button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.tweet a,
 .widget.dropbox button,
-.widget.socialicons span a {
+.widget.socialicons span a, .widget.ecombasket .ecombasket-list-container .ecombasket-checkout-wrap .ecombasket-checkout-link {
 	background-color: @color-swatch3;
 	border: none;
 	-webkit-transition: background-color .2s;
@@ -449,6 +471,14 @@ button.btn,
 .widget.socialicons span a {
 	border-radius: 3px;
 	background-color: @color-swatch3;
+}
+
+.widget.socialicons, .widget.profile .bk-profile-socialicons {
+  min-height:32px;
+}
+
+.widget.socialicons span a, .widget.profile .bk-profile-socialicons span a {
+  text-align:center;
 }
 
 footer .widget.profile .bk-profile-socialicons span a {
@@ -478,8 +508,7 @@ hr.line {
 button.btn,
 .widget.feature .feature-bgimg .content button.btn,
 .contactform button.btn,
-.widget.clicktocall a,
-.widget.clicktocall a:hover {
+.widget.clicktocall a {
 	padding: 13px 14px;
 }
 
@@ -542,6 +571,10 @@ button.btn,
 	border-radius: 3px;
 }
 
+.widget.twitter .twitter-content span.bk-full-name {
+    line-height:60px;
+}
+
 /*
 	IMAGES
 */
@@ -556,27 +589,57 @@ button.btn,
 	width:101%;
 }
 
-.widget.gallery ul li span.inner .title {
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	margin-bottom: -50px;
-	background: @color-swatch7;
-	padding: 10px;
-	text-align: center;
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	-o-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
-	display: block;
-	bottom: 5px;
-	color:@font-swatch5-color;
-	text-align:left;
-	height:100px;
-}
-
 .widget.gallery ul li {
 	padding-bottom:50%;
+}
+
+// -----------------------------
+// Gallery
+// -----------------------------
+
+.widget.gallery {
+    ul li {
+        @media @tablet {
+            width: 50%;
+            padding-bottom: 50%;
+        }
+        @media @mobile {
+            width: 100%;
+            padding-bottom: 100%;
+        }
+        span.inner {
+            .title,
+            .description {
+                // Font
+                color: @color-swatch1;
+                font-family: @font-swatch4-font-family;
+                letter-spacing: @font-swatch4-letter-spacing;
+                text-align: left;
+            }
+            .title {
+                font-size: 19px;
+                font-weight: 600;
+                line-height: 26px;
+            }
+            .description {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+    // Image Data
+    .image-data {
+        display: block;
+        opacity: 0;
+        background-color: @color-swatch3;
+        -webkit-transition: all 0.4s ease-out;
+        -moz-transition: all 0.4s ease-out;
+        -o-transition: all 0.4s ease-out;
+        transition: all 0.4s ease-out;
+        &:hover {
+            opacity: 1;
+        }
+    }
 }
 
 /*
@@ -588,10 +651,10 @@ button.btn,
 	border-radius: 3px;
 	font-size: bkscale(@font-swatch5-font-size, 0.9);
 	margin-top: 1em;
-	padding: 4px 8px;
-	background-color:@color-swatch3;
-	color: #fff;
+	padding: 1px 8px;
+	color: @font-swatch4-color;
 	font-weight:400;
+	border:1px dashed @color-swatch5;
 }
 
 .menu-item-nutritional-title {
@@ -648,7 +711,7 @@ body {
 }
 
 .feature-section {
-	margin-bottom:20px;
+	margin-bottom:10px;
 }
 
 .canvas {
@@ -663,7 +726,7 @@ body {
 .companyname {
 	float: right;
 	@media @mobile {
-		width: 100%;
+		width: 90%;
 	}
 	a {
 		float: right;
@@ -678,6 +741,7 @@ body {
 .widget.companyname a {
 	font-size: @font-swatch10-font-size;
 	font-weight:@font-swatch10-font-weight;
+	float:right;
 }
 
 .main {
@@ -848,6 +912,7 @@ footer.bk-footer .widget.extendednavigation {
 .main .menu-subsection {
 	border:0;
 	background-color:transparent;
+	padding:0;
 }
 
 .menu-subsection-wrapper.menu-subsection-promoted {
@@ -904,7 +969,7 @@ header.bk-header .header-left .widget.profile span {
 	float:right;
 }
 
-.bk-profile-email, .widget.profile form, .widget.profile span, .widget.profile .bk-profile-socialicons, .widget.profile ul.twitter {
+.bk-profile-email, .widget.profile form, .widget.profile span, .widget.profile ul.twitter {
 	margin: 0px auto;
 	display: table;
 }
@@ -1180,9 +1245,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // 7. Blog Post
 .main .blog-post-metadata {
-	border-top:5px solid @color-swatch3;
-	padding: 30px 40px;
-	margin-top: 20px;
+	padding: 10px 40px;
 }
 .main .blog-post-metadata, .main .blog-post-date {
 	time, p {
@@ -1256,7 +1319,7 @@ h1, h2, h3, h4, h5, h6 {
 .blog-post-list .blog-post-item {
 	background-color:darken(@color-swatch7,3%);
 	border-radius:5px;
-	padding-bottom:60px;
+	padding-bottom:40px;
 }
 
 .widget.blogsearch label {
@@ -1269,6 +1332,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .blog-post-sharing {
 	padding:0px 40px;
+}
+
+.blog-post-sharing {
+	margin-top:20px
 }
 
 /*	===============================
@@ -1290,6 +1357,7 @@ h1, h2, h3, h4, h5, h6 {
 .menu-item h3 {
 	font-weight:@font-swatch3-font-weight;
 	font-size: @font-swatch3-font-size;
+	margin-bottom:8px;
 }
 
 .main .menu-subsection h2 {
@@ -1332,7 +1400,7 @@ h1, h2, h3, h4, h5, h6 {
     .description {
         display: block;
         font-size: 15px;
-        padding: 5px 0 5px 10px;
+        padding: 10px 0 5px 10px;
     }
     .description {
       padding-top: 0;
@@ -1616,6 +1684,19 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 	}
 }
 
+.widget.ecomcheckout .delivery .delivery-title {
+	display: block;
+	margin-top: 30px;
+}
+
+.ecom-productlist-info {
+	margin-top:10px;
+}
+
+.widget.ecomproductslist label {
+  display:block;
+}
+
 /*	===============================
 	Media queries
 	=============================== */
@@ -1686,7 +1767,6 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 		}
 	}
 	.blogpost {
-		text-align: center;
 		padding-top: 2em;
 		img {
 			float: none;
@@ -1822,6 +1902,26 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 	footer.bk-footer .widget .extendednavigation ul li.folder ul {
 		margin-top:0;
 	}
+	.blog-post-item {
+		padding-bottom:0;
+	}
+	.blog-post-title {
+		padding:20px;
+	}
+	.widget .extendednavigation ul li a:first-child {
+		padding:0 15px;
+	}
+	.widget .extendednavigation a.pull {
+		width:20px;
+	}
+	select {
+    	width:100%;
+  	}
+
+  	.widget.ecomproductslist label {
+    	display:block;
+  	}
+
 }
 
 @media only screen and (max-width: 568px) {
@@ -1834,8 +1934,6 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 @media @mobile {
 	.widget {
 		&.clicktocall a {
-			background-color: transparent;
-			background-image: none;
 			border: none;
 		}
 	}
@@ -1843,6 +1941,9 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 		h2 > div > span, .widget.clicktocall a {
 			font-size: bkscale(@font-swatch5-font-size, 1.1);
 		}
+	}
+	.companyheader {
+		width:90%;
 	}
 	.nav {
 		background-color:lighten(@color-swatch5,90%);
@@ -1908,5 +2009,15 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 	}
 	footer.bk-footer {
 		padding: 30px 0px 40px;
+	}
+	.widget.clicktocall a {
+		border: none;
+		padding: 10px 20px 10px 40px;
+		background-color:@color-swatch3;
+	}
+	.widget.clicktocall a:hover {
+		border: none;
+		padding: 10px 20px 10px 40px;
+		background-color:@color-swatch3;
 	}
 }
