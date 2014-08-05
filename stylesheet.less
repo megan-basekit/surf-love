@@ -507,9 +507,12 @@ hr.line {
 
 button.btn,
 .widget.feature .feature-bgimg .content button.btn,
-.contactform button.btn,
-.widget.clicktocall a {
+.contactform button.btn {
 	padding: 13px 14px;
+}
+
+.widget.clicktocall a {
+	padding: 13px 14px 8px;
 }
 
 .blog-search-submit-button {
@@ -566,13 +569,14 @@ button.btn,
 	font-size: inherit;
 }
 
-.widget.twitter .twitter-profile-pic {
-	min-height:150px;
-	border-radius: 3px;
-}
-
 .widget.twitter .twitter-content span.bk-full-name {
     line-height:60px;
+}
+
+.twitter-content {
+	border-bottom: 1px solid @color-swatch3;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 /*
@@ -974,8 +978,14 @@ header.bk-header .header-left .widget.profile span {
 	display: table;
 }
 
+.bk-profile-address {
+	float:right;
+}
+
 .bk-profile-address p {
 	line-height:@font-swatch4-line-height;
+	float:left!important;
+	margin-right:5px;
 }
 
 /*	===============================
