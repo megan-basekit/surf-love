@@ -526,7 +526,6 @@ button.btn,
 }
 
 .widget.tweet a:hover {
-	color: @color-swatch1;
 	padding-bottom: 14px;
 }
 
@@ -1900,9 +1899,6 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 	.blog-post-title {
 		padding:20px;
 	}
-	.widget .extendednavigation ul li a:first-child {
-		padding:0 15px;
-	}
 	.widget .extendednavigation a.pull {
 		width:20px;
 	}
@@ -1912,6 +1908,18 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 
   	.widget.ecomproductslist label {
     	display:block;
+  	}
+  	.widget .extendednavigation ul li {
+  		padding:0;
+  	}
+  	.widget .extendednavigation ul li a {
+  		padding:10px 10px;
+  	}
+  	.widget .extendednavigation ul li.folder .text {
+  		padding:10px 10px;
+  	}
+  	.widget .extendednavigation ul li.folder ul {
+  		margin-top:0;
   	}
 
 }
@@ -1996,6 +2004,9 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 		font-size: bkscale(@font-swatch10-font-size, 0.7);
 		line-height: bkscale(@font-swatch10-line-height, 0.7);
 	}
+	.widget .extendednavigation ul li {
+		padding:0;
+	}
 	footer.bk-footer .widget .extendednavigation ul li {
 		width:50%!important;
 	}
@@ -2012,4 +2023,13 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 		padding: 10px 20px 10px 40px;
 		background-color:@color-swatch3;
 	}
+	.widget .extendednavigation ul li.folder ul {
+		margin-top:0;
+	}
+	.widget .extendednavigation ul li a {
+		padding:5px 10px;
+	}
+	  .widget .extendednavigation ul li.folder .text {
+  		padding:0px 10px;
+  	}
 }
