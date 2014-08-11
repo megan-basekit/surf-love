@@ -357,13 +357,6 @@ span h4 {
     text-align:left;
 }
 
-.widget .extendednavigation ul li a:active {
-	border-bottom: 5px solid #83b1e8;
-	margin-bottom: -8px;
-	padding-bottom: 3px;
-	text-decoration: none;
-}
-
 .widget .extendednavigation ul li.folder:after {
   	border-top-color:@font-swatch6-color;
 	right: 2px;
@@ -1526,7 +1519,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .widget.ecomcheckout .checkout-order-button:hover {
-    background-color:lighten(@color-swatch3,10%);
+    background-color:lighten(@color-swatch3,5%);
 }
 
 .widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select {
@@ -1611,7 +1604,7 @@ select::-ms-expand {
 .widget.ecomcheckout table tr td .checkout-quantitybtn button {
     background-color:@color-swatch3;
     &:hover {
-        background-color:lighten(@color-swatch3,10%);
+        background-color:lighten(@color-swatch3,5%);
     }
 }
 
@@ -1793,7 +1786,7 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
             color:@color-swatch1;
             background-color:@color-swatch3;
       &:hover {
-        background-color:lighten(@color-swatch3,15%);
+        background-color:lighten(@color-swatch3,5%);
       }
         }
       }
@@ -1819,10 +1812,13 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
   -webkit-border-radius: 4px; 
   border-radius: 4px;
   display: inline-block;
-  padding: 0 12px;
+  padding: 10px 12px;
   line-height: 45px;
   height: 45px;
   font-weight: @font-swatch7-font-weight;
+  &:hover {
+    background-color:lighten(@color-swatch3,5%);
+  }
 }
 
 /*	===============================
