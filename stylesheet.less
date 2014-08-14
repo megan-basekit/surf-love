@@ -1668,6 +1668,17 @@ input[type=search], input[type=text] .signupform fieldset input {
     padding: 3px 10px 5px;
 }
 
+// Hides *custom* dropdown arrow in Firefox 30 and above
+@supports (-moz-appearance:meterbar) and (background-blend-mode:difference,normal) {
+    .widget.ecomproductslist .productlist-filter,
+    .widget.ecomcheckout .delivery,
+    .widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation {
+        & select {
+            background-image: none;
+        }
+    }
+}
+
 // Ecom Basket Summary
 
 .ecombasketsummary a {
