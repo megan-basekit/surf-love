@@ -457,6 +457,11 @@ button.btn,
 	}
 }
 
+.widget.profile .bk-profile-socialicons a {
+    text-indent: 9999px;
+    overflow: hidden;
+}
+
 .widget.profile .bk-profile-socialicons span a:hover {
 	background-color: lighten(@color-swatch3,5%);
 }
@@ -469,8 +474,6 @@ button.btn,
 
 .widget.socialicons, .widget.profile .bk-profile-socialicons {
   min-height:32px;
-  text-align: center;
-  float:right;
 }
 
 .widget.profile .bk-profile-socialicons {
@@ -492,7 +495,6 @@ footer.bk-footer .twitter-content {
 }
 
 .widget.socialicons {
-	clear:both;
 	min-height:30px;
 }
 
@@ -755,7 +757,7 @@ body {
     // Widgets
 
 .section.main .widget {
-    .clearfix;
+    clear: both;
 }
 
 .widget.companyname a {
