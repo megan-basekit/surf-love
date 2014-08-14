@@ -516,17 +516,18 @@ button.btn,
 }
 
 .blog-search-submit-button {
-	padding:10px 14px 7px 14px;
+	padding: 9px 14px 9px 14px;
 	margin-left:10px;
+    vertical-align: middle;
 }
 
 .signupform fieldset button {
-	padding:8px 16px 8px 16px;
+	padding: 9px 16px 6px 16px;
 	margin-left:5px;
 }
 
 .widget.profile form button {
-	padding: 7px 14px 10px;
+	padding: 9px 14px 9px;
 }
 
 .widget.tweet a:hover {
@@ -748,6 +749,12 @@ body {
 			margin-right: 0;
 		}
 	}
+}
+
+    // Widgets
+
+.main.wrapper .widget {
+    .clearfix;
 }
 
 .widget.companyname a {
@@ -1435,7 +1442,7 @@ h1, h2, h3, h4, h5, h6 {
             &:after {
                 content: "\2190";
                 color: #fff;
-                top: 10px;
+                top: 8px;
                 @media @mobile {
                     top: 4px;
                 }
@@ -1445,7 +1452,7 @@ h1, h2, h3, h4, h5, h6 {
             &:after {
                 content: "\2192";
                 color: #fff;
-                top: 10px;
+                top: 8px;
                 @media @mobile {
                     top: 4px;
                 }
@@ -1513,6 +1520,16 @@ h1, h2, h3, h4, h5, h6 {
 /* ===============================
    Ecom
    =============================== */
+
+   .widget.ecombasket .ecombasket-pull p,
+   .widget.ecombasket .ecombasket-pull .basket-count {
+        font-family: "Open Sans", Helvetica, Verdana, sans-serif;
+        font-size: @font-swatch7-font-size;
+        font-weight: @font-swatch5-font-weight;
+        line-height: @font-swatch7-line-height;
+        color: @font-swatch7-color;
+        letter-spacing: @font-swatch7-letter-spacing;
+   }
 
 .widget.ecomcheckout .checkout-order-button {
     background-color:@color-swatch3;
@@ -1613,7 +1630,7 @@ select::-ms-expand {
 }
 
 .ecom-productslist-products button.btn {
-    padding:7px 14px;
+    padding: 4px 14px 6px 14px;
 }
 
 .ecom-productlist-info {
@@ -1700,6 +1717,18 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
 
 .widget.ecomproductslist label {
   display:block;
+}
+
+// Ecom filter select
+
+.form-group.ecom-productslist-search {
+    input {
+        padding: 3px 10px 5px;
+    }
+}
+
+input[type=search], input[type=text] .signupform fieldset input {
+    padding: 3px 10px 5px;
 }
 
 // Ecom Basket Summary
@@ -1900,7 +1929,6 @@ input[type=search], input[type=text], input[type=email], .signupform fieldset in
       font-size: bkscale(@font-swatch5-font-size, 1.05);
       line-height: bkscale(@font-swatch5-font-size, 1.1);
       margin-top: 25px;
-      border:2px solid @color-swatch4;
       padding:20px;
       font-weight:700;
     }
