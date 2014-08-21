@@ -98,15 +98,17 @@ input[type=submit],
 		font-size: @font-swatch9-font-size;
 	}
 	.content {
-	.spare {
-		padding:40px;
-		}
-	}
+    	.spare {
+    		padding: 50px 10px 40px;
+            @media @mobile {
+                padding: 40px 10px 25px;
+            }
+    	}
+    }
 }
 
 // Logo
 .logo {
-	float: right;
 	@media @mobile {
 		width: 100%;
 	}
@@ -132,22 +134,25 @@ span h4 {
 }
 
 .widget {
-    &.logo, &.companyname {
+    &.logo, &.companyname, {
         display: inline-block;
         vertical-align: middle;
     }
 }
 
-
 /* ===============================
    EXTENDED NAVIGATION
    =============================== */
 
+
+
 .widget.extendednavigation {
-    max-width: 60%;
+    float: left;
+    padding-top: 12px;
+    width: 65%;
     @media @tablet {
     	float: none;
-    	max-width: 100%;
+    	width: 100%;
     }
 }
 
@@ -189,6 +194,12 @@ span h4 {
                 		border-top: 1px solid rgba(170, 170, 170, 0.3);
                 	}
                 }
+                &:first-child a {
+                     padding-left: 0;
+                     @media @tablet {
+                        padding-left: 10px;
+                     }
+                }
                 &:last-child {
                     @media @tablet {
                         border-bottom: 0;
@@ -205,12 +216,12 @@ span h4 {
                         li {
                             display: block;
                             width: 100%;
-                                .box-sizing {
-                                    a {
-                                        display: block;
-                                        padding: 0;
-                                    }
+                            .box-sizing {
+                                a {
+                                    display: block;
+                                    padding: 0;
                                 }
+                            }
                         }
                     }
                 }
@@ -270,6 +281,12 @@ span h4 {
                             margin-top: 14px;
                         }
                         li {
+                            &:first-child a {
+                                padding-left: 15px;
+                                @media @tablet {
+                                    padding-left: 10px;
+                                }
+                            }
                             a { 
                                 .text {
                                     color: @font-swatch6-color;
@@ -290,12 +307,12 @@ span h4 {
            &.pull {
                display: none;
                right:auto;
+               top: 25px;
                @media @tablet {
                    display: block;
                    position: absolute;
                    margin: 0 auto;
                    width: 20px;
-                   top: -7px;
                    &:hover {
                        cursor: pointer;
                    }
@@ -310,12 +327,11 @@ span h4 {
 					    left:auto;
 					    border-radius:0;
 					    box-shadow:none;
-					    margin-top:20px; 
                    }
                 }
-				@media @mobile {
-					top: -27px;
-				}
+                @media @mobile {
+                    top: 38px;
+                }
            }
        }
     }
@@ -498,11 +514,6 @@ footer.bk-footer .twitter-content {
 	min-height:30px;
 }
 
-.widget.image span img {
-	width:100%;
-
-}
-
 hr.line {
 	background-color: fade(@color-swatch5, 25%);
 	height:1px;
@@ -531,6 +542,7 @@ button.btn,
 
 .widget.profile form button {
 	padding: 9px 14px 9px;
+    vertical-align: top;
 }
 
 .widget.tweet a:hover {
@@ -553,6 +565,7 @@ button.btn,
 
 .widget.twitter ul li a,
 .widget.twitter ul li span a {
+    font-size: @font-swatch5-font-size;
 	text-decoration: none;
 	&:hover {
 		text-decoration: none;
@@ -570,10 +583,6 @@ button.btn,
 }
 .twitter ul li time {
 	font-size: inherit;
-}
-
-.widget.twitter .twitter-content span.bk-full-name {
-    line-height:60px;
 }
 
 .twitter-content {
@@ -726,7 +735,6 @@ body {
 }
 
 .bk-pt-default header.bk-header {
-	padding: 50px 0 30px;
 	border-bottom: 1px solid lighten(@color-swatch5,30%);
 }
 
@@ -740,13 +748,8 @@ body {
 }
 
 .companyname {
-	// float: right;
-	@media @mobile {
-		width: 90%;
-	}
 	a {
-		// float: right;
-		margin-right:5px;
+		margin-left: 5px;
 		@media @mobile {
 			float: none;
 			margin-right: 0;
@@ -763,18 +766,16 @@ body {
 .widget.companyname a {
 	font-size: @font-swatch10-font-size;
 	font-weight:@font-swatch10-font-weight;
-	float:right;
 }
 
 // Header
 
 header.bk-header, .nav {
-	text-align: center;
 	clear: both;
 }
 header.bk-header {
 	width: 100%;
-	padding: 50px 0;
+	padding: 50px 0 40px;
 	@media @mobile {
 		padding: 30px 0;
 	}
@@ -796,10 +797,13 @@ header.bk-header {
 	}
 }
 .companyheader {
-	float: right;
-    max-width: 40%;
+    float: right;
+    margin-left: -4px;
+    width: 35%;
+    text-align: right;
     @media @tablet {
-        max-width: 70%;
+        margin-left: 0;
+        width: 80%;
     }
 }
 .header-section, .footer-section {
@@ -838,6 +842,17 @@ footer.bk-footer {
 	padding: 40px 0px;
 	width:100%;
 	border-top:1px solid @color-swatch1;
+    .columns-two-right {
+        text-align: right;
+        @media @tablet {
+            text-align: center;
+        }
+    }
+    .widget.extendednavigation {
+        float: none;
+        padding-top: 0;
+        width: 100%;
+    }
 }
 
 footer.bk-footer .widget .extendednavigation ul {
@@ -921,13 +936,9 @@ header.bk-header .header-left .widget.profile span {
     font-size: @font-swatch4-font-size;    
 }
 
-.bk-profile-address {
-	float:right;
-}
 
 .bk-profile-address p {
 	line-height:@font-swatch4-line-height;
-	float:left!important;
 	margin-right:5px;
 }
 
@@ -1055,9 +1066,6 @@ span.cross {
 			background: darken(@color-swatch1, 5%);
 		}
 	}
-	.content {
-		padding-top: 5%;
-	}
 }
 .menu-header {
 	border-bottom: 1px solid fade(@color-swatch5, 10%);
@@ -1120,7 +1128,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blog-post-item {
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 	clear: both;
 	background-color:darken(@color-swatch7,5%);
 }
@@ -1284,11 +1292,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blog-post-sharing {
-	padding:0px 40px;
+	padding:0px 20px;
+    @media @mobile {
+        padding-bottom: 20px;
+    }
 }
 
 .blog-post-sharing {
-	margin-top:20px
+	margin-top:20px;
 }
 
 /*	===============================
@@ -1568,6 +1579,8 @@ select::-ms-expand {
 
 .ecom-productslist-products button.btn {
     padding: 4px 14px 6px 14px;
+    margin-top: 0;
+    vertical-align: top;
 }
 
 .ecom-productlist-info {
@@ -2139,7 +2152,7 @@ input[type=search], input[type=text] .signupform fieldset input {
 		padding: 30px 0px 10px 0px;
 	}
 	.main .blog-post-metadata {
-		margin-bottom:40px;
+		margin-bottom: 20px;
 		width:100%;
 		padding-top:20px;
 	}
@@ -2158,16 +2171,15 @@ input[type=search], input[type=text] .signupform fieldset input {
 	}
 	.responsivecolumns .columns-two-right, .columns-two-50-50 .columns-two-right {
 		width: 100%!important;
-		margin-left: 1.5%;
+		margin-left: 0;
 	}
 	.widget .extendednavigation ul.align-right li.folder:after {
     	right: 5px;
     	left: inherit;
 	}
 	footer.bk-footer .widget .extendednavigation ul li {
-		width: 20%;
-		padding:0;
-	}
+        width: 50%!important;
+    }
 	footer.bk-footer .widget .extendednavigation a.pull {
 		display:none;
 	}
@@ -2178,9 +2190,6 @@ input[type=search], input[type=text] .signupform fieldset input {
 	}
 	.right .right1 {
 		float:none;
-	}
-	.widget.profile span, .widget.profile p, .widget.profile {
-		float:inherit;
 	}
 	footer.bk-footer .widget .extendednavigation {
 		margin-bottom:20px;
@@ -2200,7 +2209,6 @@ input[type=search], input[type=text] .signupform fieldset input {
 	select {
     	width:100%;
   	}
-
   	.widget.ecomproductslist label {
     	display:block;
   	}
@@ -2208,8 +2216,8 @@ input[type=search], input[type=text] .signupform fieldset input {
   		padding:0;
   	}
   	.widget .extendednavigation ul li a {
-  		padding:10px 10px;
-  	}
+        padding: 5px 10px;
+    }
   	.widget .extendednavigation ul li.folder .text {
   		padding:10px 10px;
   	}
@@ -2222,7 +2230,7 @@ input[type=search], input[type=text] .signupform fieldset input {
 @media only screen and (max-width: 568px) {
 	.responsivecolumns .columns-two-right, .columns-two-50-50 .columns-two-right {
 		width: 100%!important;
-		margin-left: 1.5%;
+		margin-left: 0;
 	}
 }
 
@@ -2236,9 +2244,6 @@ input[type=search], input[type=text] .signupform fieldset input {
 		h2 > div > span, .widget.clicktocall a {
 			font-size: bkscale(@font-swatch5-font-size, 1.1);
 		}
-	}
-	.companyheader {
-		width:90%;
 	}
 	.nav {
 		background-color:lighten(@color-swatch5,90%);
@@ -2269,7 +2274,7 @@ input[type=search], input[type=text] .signupform fieldset input {
 		padding: 1.5em 0 0 0;
 	}
 	.main .blog-post-metadata {
-		margin-bottom:40px;
+		margin: 20px 0;
 		width:100%;
 		padding-top:20px;
 	}
@@ -2279,12 +2284,10 @@ input[type=search], input[type=text] .signupform fieldset input {
 	input[type=search], input[type=search]:focus {
 		width: 69%;
 	}
-	.companyname {
-		margin-top: -10px;
-	}
-	.widget .extendednavigation a.pull {
-		top: 10px;
-	}
+   .widget.feature .feature-bgimg .content {
+        height: auto;
+        min-height: 300px;
+    }
 	.widget.gallery ul li {
 		width: 100%;
 		height:400px;
@@ -2312,6 +2315,7 @@ input[type=search], input[type=text] .signupform fieldset input {
 		border: none;
 		padding: 10px 20px 10px 40px;
 		background-color:@color-swatch3;
+        font-weight: 700;
 	}
 	.widget.clicktocall a:hover {
 		border: none;
