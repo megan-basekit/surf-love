@@ -148,7 +148,7 @@ span h4 {
     padding-top: 12px;
     width: 65%;
     @media @tablet {
-    	float: none;
+        padding-top: 0;
     	width: 100%;
     }
 }
@@ -164,7 +164,7 @@ span h4 {
     	.clearfix;
         @media @tablet {
             background-color: transparent;
-            width:100%;
+            width: 80%;
         }
         li {
             ul {
@@ -310,6 +310,7 @@ span h4 {
                    position: absolute;
                    margin: 0 auto;
                    width: 20px;
+                   top: -40px;
                    &:hover {
                        cursor: pointer;
                    }
@@ -325,9 +326,6 @@ span h4 {
 					    border-radius:0;
 					    box-shadow:none;
                    }
-                }
-                @media @mobile {
-                    top: 20px;
                 }
            }
        }
@@ -800,7 +798,7 @@ header.bk-header {
     text-align: right;
     @media @tablet {
         margin-left: 0;
-        width: 85%;
+        width: 100%;
     }
 }
 .header-section, .footer-section {
