@@ -1,15 +1,2 @@
 {
-	"name":"Surf and Love",
-	"thumbnail":"surfandlove.png",
-	"screenshot":"surfandlove.png",
-	"templateType":"standard",
-    "pageTypes": [
-        "home"
-    ],
-    "foo":"humbug",
-    "tags": {
-    "en": ["clean", "nature", "white", "modern", "blog", "professional", "simple", "surf", "love", "warm", "sans serif"],
-    "es": ["minimalista", "limpio", "fotografico", "vintage", "moderno", "oscuro", "estudio", "website", "creativo", "elegante", "profesional", "unico", "comunicacion", "sans-serif"],
-    "br": ["minimalista", "limpo", "fotografia", "vintage", "moderno", "escuro", "estúdio", "website", "criativo", "elegante", "profissional", "único", "mídia", "sans-serif"]
-    }
 }
